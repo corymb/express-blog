@@ -17,22 +17,34 @@ const createPost = (conn, data) => {
   parsedData.slug = data.title
     .toLocaleLowerCase()
     .replace(/[-\s]+/g, '-');
-  console.log(data);
   const promise = r.table('posts')
     .insert(parsedData)
     .run(conn)
-    .then((resp) => {
-      console.log(resp);
-    })
     .error((err) => {
       console.log(err);
     });
   return promise;
 };
 
+const getPost = (conn, slug) => {
+  const promise = r.table('posts').filter({ slug })
+    .run(conn)
+    .then(cursor => cursor.next())
+    .error((err) => {
+      console.log(err);
+    });
+  return promise;
+};
+
+const deletePost = (conn, slug) => {
+  console.log(slug);
+};
+
 const model = {
   getPublishedPosts,
   createPost,
+  getPost,
+  deletePost,
 };
 
 module.exports = model;
