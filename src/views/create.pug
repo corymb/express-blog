@@ -1,0 +1,11 @@
+extends _base
+
+block content
+  h2 New Post
+  form(method='POST')
+    p= 'Title'
+    input(type='text', placeholder='Post Title' name='title') 
+    p= 'Content'
+    textarea(type='text', name='content') 
+    br
+    button(type='submit') Submit

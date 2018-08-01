@@ -11,4 +11,14 @@ router.get('/', (req, res) => {
 });
 
 
+// Create Post:
+router.get('/new', (req, res) => {
+  res.render('create', { title: 'Blog' });
+});
+
+router.post('/new', (req, res) => {
+  model.createPost(req.dbConn, req.body);
+  res.render('create', { title: 'Blog' });
+});
+
 module.exports = router;

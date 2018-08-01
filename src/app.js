@@ -15,6 +15,7 @@ app.set('view engine', 'pug');
 app.use(express.static(path.join(__dirname, 'assets')));
 
 // Middleware
+app.use(express.urlencoded({extended: true}));
 // TODO: Fix this coupling
 app.use(middleware);
 
