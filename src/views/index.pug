@@ -3,6 +3,7 @@ extends _base
 block content
   h1= title
   p Welcome!
+  a(href='/new') New Post
 
   ul
     each post in posts
@@ -11,4 +12,3 @@ block content
     else
       p= 'No posts yet!'
 
-    a(href='/new') New Post
