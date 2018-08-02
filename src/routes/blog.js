@@ -29,5 +29,13 @@ router.get('/:slug', (req, res) => {
   });
 });
 
+// Delete Post:
+router.delete('/delete/:id', (req, res) => {
+  model.deletePost(req.dbConn, req.params.id).then((post) => {
+    res.redirect('/');
+  });
+});
+
+
 
 module.exports = router;

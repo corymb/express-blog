@@ -36,8 +36,14 @@ const getPost = (conn, slug) => {
   return promise;
 };
 
-const deletePost = (conn, slug) => {
-  console.log(slug);
+const deletePost = (conn, postId) => {
+  const promise = r.table('posts').get(postId)
+    .delete()
+    .run(conn)
+    .error((err) => {
+      console.log(err);
+    });
+  return promise;
 };
 
 const model = {

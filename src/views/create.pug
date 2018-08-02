@@ -2,7 +2,7 @@ extends _base
 
 block content
   h2 New Post
-  form(method='POST')
+  form(method='POST' action='/new')
     p= 'Title'
     input(type='text', placeholder='Post Title' name='title') 
     p= 'Content'
