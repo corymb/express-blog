@@ -2,7 +2,7 @@
   "name": "blog",
   "version": "1.0.0",
   "description": "Blog written in Express",
-  "main": "app.js",
+  "main": "src/app.js",
   "author": "Dave Bush <github@david-bush.co.uk>",
   "license": "MIT",
   "dependencies": {
